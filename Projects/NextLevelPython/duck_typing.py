@@ -8,12 +8,12 @@ len(my_dict)  # 3
 
 
 class Book:
-    def __init__(self, author: str, title: str, pages: int):
+    def __init__(self, author: str, title: str, pages: int) -> None:
         self.author = author
         self.title = title
         self.pages = pages
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.pages
 
 
