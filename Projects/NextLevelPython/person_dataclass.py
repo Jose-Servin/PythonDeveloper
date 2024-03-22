@@ -7,7 +7,7 @@ def generate_id() -> str:
     return "".join(random.choices(string.ascii_uppercase, k=12))
 
 
-@dataclass(frozen=True)
+@dataclass()
 class Person:
     name: str
     address: str
@@ -19,11 +19,14 @@ class Person:
     def search_string(self) -> str:
         return f"{self.name} {self.address}"
 
+    def __str__(self) -> str:
+        return self.name
+
 
 def main() -> None:
     person = Person(name="John", address="123 Main St")
     print(person)
-    print(person.search_string)
+    # print(person.search_string)
 
 
 if __name__ == "__main__":
